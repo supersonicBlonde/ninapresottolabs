@@ -11,7 +11,27 @@
 
 header.header {
   background-color: $background__dark;
+  width: 100%;
+  position: relative;
+  top: 1px;
+  z-index: 100;
+  opacity: 1;
+  transition: all .5s;
+
+  &.slideBack {
+    opacity: 0;
+    -webkit-animation: 5s slideBack ease;
+    animation: 5s slideBack ease;
+  }
+  
+  &.sticky {
+    position: fixed;
+    -webkit-animation: 1s slide ease;
+    animation: 1s slide ease;
+  }
 }
+
+
 
 .circled {
   border-radius: 50%;
@@ -190,19 +210,19 @@ a:not(.no-deco) {
 
 /*************************************/
 
-#home {
+#home-section {
   background-color: $background__dark;
 }
 
-#services {
+#services-section {
   background-color: $color__secondary;
 }
 
-#about {
+#about-section {
   background-color: #A54657;
 }
 
-#contact {
+#contact-section {
   background-color: #5e565a;
 }
 
@@ -302,5 +322,38 @@ a:not(.no-deco) {
 
   &:after {
     border-color: $color__primary;
+  }
+}
+
+.tp-bullets {
+  position: fixed;
+  display: none;
+  z-index: 1000;
+  left: 15px;
+  height: 122px; 
+  width: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media(min-width: 768px) {
+    display: block;
+  }
+}
+
+.tp-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 9px;
+  position: absolute;
+  background-color: $color-off-white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-sizing: content-box;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+
+  &.active {
+    background-color: $color__accent;
   }
 }

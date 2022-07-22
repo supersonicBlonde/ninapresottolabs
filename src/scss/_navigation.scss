@@ -48,5 +48,25 @@
   }
 }
 
-    
+.nav-link {
+  color: $color__alt_light;
+  font-size: .7em;
+  transition: color .3s;
+  padding: 5px ;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+
+  &:hover {
+    color: $color__hover;
+  }
+}
+
+.nav-item {
+  margin-bottom: 0;
+}
+
+.nav-item.active .nav-link {
+  color: $color__hover;
+}    
    

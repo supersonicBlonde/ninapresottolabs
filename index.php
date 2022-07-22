@@ -57,8 +57,19 @@ if ($form->submitted())
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-          
+          <ul class="navbar-nav mr-auto ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link no-deco" href="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link no-deco" href="services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link no-deco" href="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link no-deco" href="contact">Say hello</a>
+            </li>
           </ul>
           <div class="git">
             <a href="https://github.com/supersonicBlonde" class="no-deco">
@@ -82,7 +93,7 @@ if ($form->submitted())
         </div>
       </nav>
     </header>
-    <section class="panel" id="home">
+    <section class="panel" id="home-section" data-section-name="home">
       <div class="section-content">
         <div class="container">
           <div class="row">
@@ -102,7 +113,7 @@ if ($form->submitted())
         <a href="#overview" class="scroll"></a>
       </div>
     </section><!-- section -->
-    <section class="panel" id="services">
+    <section class="panel" id="services-section" data-section-name="services">
       <div class="section-content">
         <div class="container">
           <div class="row align-items-center pt-2 pt-md-5">
@@ -138,14 +149,14 @@ if ($form->submitted())
         </div>
       </div>
     </section>
-    <section class="panel" id="about">
+    <section class="panel" id="about-section" data-section-name="about">
       <div class="section-content">
         <div class="container">
           <div class="row pt-5">
             <div class="col-md-4 col-12 pt-2 pt-md-5">
               <div class="item">
                 <div class="polaroid">
-                  <img class="grayscale" src="dist/img/ninaprofil.jpg" alt="">
+                  <img class="grayscale" src="dist/img/ninaprofil.jpg" alt="Nina Presotto portrait">
                 </div>
               </div>
             </div>
@@ -161,7 +172,7 @@ if ($form->submitted())
         </div>
       </div>
     </section>
-    <section class="panel" id="contact">
+    <section class="panel" id="contact-section" data-section-name="home">
       <div class="section-content">
         <div class="container">
           <div class="row pt-3 pt-md-5">
@@ -192,6 +203,12 @@ if ($form->submitted())
         </div>
       </div>
     </section>
+    <div class="tp-bullets" style="">
+      <div class="tp-bullet" style="top: 0px; left: 0px;"></div>
+      <div class="tp-bullet" style="top: 28px; left: 0px;"></div>
+      <div class="tp-bullet selected" style="top: 56px; left: 0px;"></div>
+      <div class="tp-bullet" style="top: 84px; left: 0px;"></div>
+    </div>
     <div id="upBtnContainer">
       <a href="#" onclick="topFunction()" class="no-deco" id="upBtn" title="Go to top">Top</a>
     </div>

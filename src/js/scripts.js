@@ -1,15 +1,13 @@
+
+
 $(function() {
   $.scrollify({
     section: ".panel",
-    //sectionName:false,
+    sectionName: 'section-name',
+    interstitialSection: 'header',
     scrollSpeed: 1100,
     after: function(i) {
-      /*
-			if(i===2) {
-				$.scrollify.setOptions({
-					easing:"easeOutExpo"
-				});
-			}*/
+      sidebarNavUpdate(i);
     }
   });
 
@@ -22,7 +20,13 @@ $(function() {
   $(".scrollContact").click(function(e) {
     e.preventDefault();
 
-    $.scrollify.move("#4");
+    $.scrollify.move("#contact");
+  });
+
+  $('.nav-link').click(function(e) {
+    e.preventDefault();
+    let href = $(this).attr('href');
+    $.scrollify.move('#'+href);
   });
 
   //Get the button:
@@ -30,6 +34,13 @@ $(function() {
 
 });
 
+
+function sidebarNavUpdate(i) {
+  let bullets = $('.tp-bullet');
+  let bullet = $('.tp-bullet:nth-child('+i+')');
+  bullets.removeClass('active');
+  bullet.addClass('active');
+}
 
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -41,6 +52,17 @@ function scrollFunction() {
       upBtn.classList.add("show");
   } else {
     upBtn.classList.remove("show");
+  }
+  // Get the header
+  var header = document.querySelector(".header");
+  // Get the offset position of the navbar
+  var sticky = header.offsetTop + 100;
+
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+    header.css('opacity' , 0.5);
   }
 }
 
