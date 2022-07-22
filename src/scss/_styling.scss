@@ -16,12 +16,16 @@ header.header {
   top: 1px;
   z-index: 100;
   opacity: 1;
+  -webkit-box-shadow: -1px 5px 15px -4px rgba(0,0,0,0); 
+  box-shadow: -1px 5px 15px -4px rgba(0,0,0,0);
   transition: all .5s;
 
   &.sticky {
     position: fixed;
     -webkit-animation: 1s slide ease;
     animation: 1s slide ease;
+    -webkit-box-shadow: -1px 5px 15px -4px rgba(0,0,0,0.42); 
+    box-shadow: -1px 5px 15px -4px rgba(0,0,0,0.42);
   }
 }
 
