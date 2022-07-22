@@ -18,12 +18,6 @@ header.header {
   opacity: 1;
   transition: all .5s;
 
-  &.slideBack {
-    opacity: 0;
-    -webkit-animation: 5s slideBack ease;
-    animation: 5s slideBack ease;
-  }
-  
   &.sticky {
     position: fixed;
     -webkit-animation: 1s slide ease;

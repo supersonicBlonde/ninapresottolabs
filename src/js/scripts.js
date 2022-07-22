@@ -62,7 +62,6 @@ function scrollFunction() {
     header.classList.add("sticky");
   } else {
     header.classList.remove("sticky");
-    header.css('opacity' , 0.5);
   }
 }
 
