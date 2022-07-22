@@ -1,0 +1,61 @@
+/**********************************
+	COLORS
+	***********************************/
+
+$color__body: #B1C1C0;
+
+$color__primary: #1D2D44;
+$color__accent: #E3B505;
+$color__secondary: #3E5C76;
+$color__alt: #3AAFB9;
+$color__alt_light: #B1C1C0;
+$color-off-white: #fffefa;
+$color__accent_alt: #F46036;
+$color__headline: #a9cbb7;
+
+$color__hover: #f0e24d;
+
+
+$headline--is-light: $color__alt;
+$headline--is-dark: $color__secondary;
+
+
+
+$background__light: #F8F8F8;
+$background__dark: $color__primary; 
+
+$border: rgba(177, 177, 177, 0.3);
+$color__border-button: rgba(255, 254, 247, .5);
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+
+
+$font__primary: Roboto, sans-serif;
+$font__headline: Roboto Condensed, sans-serif;
+$font__monospace: Roboto Mono, monospace;
+
+$size-headline: clamp(2rem, 1.35rem + 6.2vw, 3rem);
+$size-headline-gigantic: clamp(2.9rem, 1.35rem + 6.2vw, 5rem);
+$size-smaller-headline: clamp(1.35rem, 0.9625rem + 1.55vw, 2.125rem);
+$size-subtitle: clamp(1rem, 0.9625rem + 1.55vw, 1.5rem);
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi: 600;
+$bold: 700; 
+
+
+
+/* MAIN NAVIGATION  
+		DARK 
+*/
+
+$nav__color_links: #C4C4C4;
+$nav__color_links_hover: #bc9435;
+
+/* FOOTER NAVIGATION  */
+$footer__color_links: #4E4E4E;
+$footer__fontsize_links: 1.2em;
+$footer__spacing_items: 1.2em; 
+

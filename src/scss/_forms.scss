@@ -1,0 +1,68 @@
+/**********************************************
+		BASIC STYLING FORMS
+
+		**************************************/
+
+		form {
+			div {
+				margin: 2em 0;
+			}
+		}
+		input, textarea {
+			caret-color: white;
+			height: 50px;
+			color: white;
+		}
+		
+		label, input, button[type=submit], textarea {
+			display: block;
+			width: 100%;
+			padding: 0;
+			border: none;
+			outline: none;
+			box-sizing: border-box;
+		}
+		
+		button[type=submit] {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			background-color:#5e565a;
+			margin-top: 1rem;
+		}		
+		
+		label {
+			margin-bottom: 4px;
+		}
+		
+		label:nth-of-type(2) {
+			margin-top: 12px;
+		}
+		
+		input::placeholder, textarea::placeholder {
+			color: rgba(255, 255, 255, 0.5);
+		}
+		
+		input, textarea {
+			background: #5e565a;
+			padding: 10px;
+			padding-left: 20px;
+			font-size: 14px;
+			border-radius: 10px;
+			border-bottom-left-radius: 0;
+			border-top-right-radius: 0;
+			box-shadow:
+				inset 3px 3px 6px 0 rgba(0, 0, 0, 0.25),
+				inset  -3px -3px 4px 0 rgba(255, 255, 255, 0.15);
+		}
+
+		textarea {
+			height: 150px;
+		}
+
+		input:invalid, textarea:invalid {
+			border: 2px dashed red;
+		}
+		
+
+		
+	

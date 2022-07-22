@@ -1,0 +1,14 @@
+{
+    "name": "33664/ninapresotto",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nina Presotto",
+            "email": "contact@ninapresotto.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "formr/formr": "^1.4"
+    }
+}

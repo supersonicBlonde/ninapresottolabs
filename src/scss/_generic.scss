@@ -1,0 +1,23 @@
+/**********************************************
+		BASIC STYLING
+
+		**************************************/
+
+		body{
+			margin: 0;
+			font-size: 16px;
+			color: $color__body;
+			font-family: $font__primary;
+		}
+
+		p{
+			margin:0;
+		}
+
+
+		// HELPERS
+
+		.no-pb {
+			padding-bottom: 0!important;
+			margin-bottom: 0!important;
+		}

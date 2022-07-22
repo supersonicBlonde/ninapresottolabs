@@ -1,4 +1,32 @@
 <!-- DESIGNED and DEVELOPED by Nina Presotto labs (https://ninapresotto.com) -->
+<?php
+require_once 'vendor/autoload.php';
+
+$form = new Formr\Formr();
+$form->required = '*';
+
+// check if the form has been submitted
+if ($form->submitted())
+{
+    // get our form values and assign them to a variable
+    $data = $form->validate('Name, Email, Comments');
+
+    // show a success message if no errors
+    if($form->ok()) {
+        $form->success_message = "Thank you, {$data['name']}!";
+        $headers = 'From: contact@ninapresotto.com' . "\r\n" .
+        'Reply-To: '.$data["email"].'' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+        echo "<script>document.write( window.location.href = '#4')</script>";
+        mail(
+          'contact@ninapresotto.com',
+          'A new message from ninapresotto.com',
+          $data['name']." ".$data['name']." ".$data['email'],
+          $headers
+        );
+    }
+}
+?>
 <! doctype html>
 <html>
   <head>
@@ -24,7 +52,7 @@
   <body>
     <header class="header">
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand no-deco" href="#"><strong>Nina Presotto</strong>&nbsp;Labs</span></a>
+        <a class="navbar-brand no-deco" href="/"><strong>Nina Presotto</strong>&nbsp;Labs</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -65,7 +93,7 @@
           </div><!-- .row -->
           <div class="row mt-5">
             <div class="col-12">
-              <p class="subtitle"><a href="#contact">Be in touch.</a></span> I answer to all your questions.</p>
+              <p class="subtitle"><a href="#" class="scrollContact">Be in touch.</a></span> I answer to all your questions.</p>
           </div><!-- .col -->
           </div><!-- .row -->
         </div><!-- .container -->
@@ -89,7 +117,7 @@
                 <li>Efficient code, elegant and optimized</li>
               </ul>
               <div class="my-5 pl-5 ">
-                <a href="#contact" class="no-deco button" style="background-color:#3e5c76;">Let's talk about your project!</a>
+                <a href="#" class="scrollContact no-deco button" style="background-color:#3e5c76;">Let's talk about your project!</a>
               </div>  
             </div>
             <div class="col-md-4 col-12 pt-md-5">
@@ -120,7 +148,7 @@
               <p>The knowledge of the <span class="color-white">PHP language</span>, which constitutes the basis of <span class="color-white">wordpress,</span><br>+ the experience of implementing technical responses guarantees an <span class="color-white">irreproachable service.</span></p>    
               <p>I am <span class="color-white">highly experienced</span> technically and also in the relationship I have with my clients. I am permanently available throughout the mission and after the end of it to support you in the <span class="color-white">success of your project.</span></p>
               <div class="my-5">
-                <a href="#contact" class="no-deco button" style="background-color:#a54657;">Want to know more?</a>
+                <a href="#" class="scrollContact no-deco button" style="background-color:#a54657;">Want to know more?</a>
               </div>  
             </div>
           </div>
@@ -134,23 +162,24 @@
             <div class="col-md-6 col-12 offset-md-3">
               <h2 class="headline uppercase">Say Hello</h2>
               <div class="inputs">
-                <form method="post" action="inc/contactform.php">
+                <?php 
+                 $form->create_form('Name, Email, Comments|textarea');
+                 $form->messages(); 
+                 ?> 
+                <!-- <form method="post" action="inc/contactform.php">
                   <div>
-                  <!-- <label>NAME</label> -->
                   <input type="text" placeholder="your name" required/>
                   </div>
                   <div>
-                  <!-- <label>EMAIL</label> -->
                   <input type="email" id="input-email" required placeholder="example@test.com"/>
                   </div>
                   <div>
-                    <!-- <label>MESSAGE</label> -->
                     <textarea placeholder="your message" rows="8" required></textarea>
                   </div>
                   <div>
                     <button class="w-50" style="background-color:#5e565a;" type="submit">LOGIN</button>
                   </div>
-                </form>
+                </form> -->
               </div>
             </div>
           </div>

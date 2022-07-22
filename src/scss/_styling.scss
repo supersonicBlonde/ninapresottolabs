@@ -1,0 +1,200 @@
+/**********************************************
+		ELEMENT STYLING
+
+		**************************************/
+
+/**********************************************
+    LEAVE THE FOLLOWING SECTION 
+  	**************************************/
+
+/* HEADER / NAV CONTAINER */
+
+header.header {
+  background-color: $background__dark;
+}
+
+.circled {
+  border-radius: 50%;
+}
+.element-on-mobile-only {
+  @media(min-width: 1200px) {
+    display: none;
+  }
+}
+
+// COLORS
+.color-accent  {
+  color: $color__accent;
+}
+
+
+h2 {
+  color: $color__headline;
+}
+
+p, li {
+  font-size: 1.3em;
+  margin-bottom: 1rem;
+  
+  .color-white {
+    color: white;
+    font-size: 1.4em;
+  }
+}
+
+p {
+  line-height: 1.7;
+}
+
+li {
+  line-height: 1;
+}
+
+
+// TYPO
+.bold {
+  font-weight: $bold;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.headline {
+  font-family: $font__headline;
+  font-weight: 700;
+  font-size: $size-headline;
+}
+
+.headline--is-gigantic {
+  font-size: $size-headline-gigantic;
+}
+.headline--is-small {
+  font-size: $size-smaller-headline;
+  font-weight: 400;
+}
+.headline--is-light {
+  color: $headline--is-light;
+}
+.headline--is-dark {
+  color: $headline--is-dark;
+}
+
+.subtitle {
+  font-size: $size-subtitle;
+}
+
+.button, button:not(.navbar-toggler) {
+  box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -3px -3px 4px 0 rgba(255, 255, 255, 0.15),
+    inset 3px 3px 6px 0 rgba(0, 0, 0, 0),
+    inset  -3px -3px 4px 0 rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  color: #E3B505;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.3s;
+
+  &:hover {
+    text-decoration:none;
+    color: #f0e24d; 
+    box-shadow:
+     12px 12px 16px 0 rgba(0, 0, 0, 0),
+    -3px -3px 4px 0 rgba(255, 255, 255, 0),
+    inset 3px 3px 6px 0 rgba(0, 0, 0, 0.25),
+    inset  -3px -3px 4px 0 rgba(255, 255, 255, 0.15);
+  }
+}
+
+// LINKS
+a:not(.no-deco) {
+	text-decoration: none;
+	color: $color__accent;
+	font-weight: 700;
+  position: relative;
+  z-index: 2;
+
+  &:before {
+    content: '';
+    background-color: rgba(244, 96, 54, .75)!important;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 8px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    &:before {
+      bottom: 0;
+      height: 100%;
+    }
+  }
+}
+
+/*************************************/
+
+#home {
+  background-color: $background__dark;
+}
+
+#services {
+  background-color: $color__secondary;
+}
+
+#about {
+  background-color: #A54657;
+}
+
+#contact {
+  background-color: #5e565a;
+}
+
+.logos-container {
+  border-radius: 50%;
+
+  @media(min-width:768px) {
+    /* background-color: rgba(255, 255, 255, 0.2); */
+  }
+
+  img {
+    &:not(.logox2) {
+      height: 50px;
+    }
+    &.logox2 {
+      width: 150px;
+    }
+    margin-bottom: 1rem;
+  }
+}
+
+
+.scroll {
+  position: relative;
+  font-size: 1.3em;
+  margin-top: 20px;
+  display: inline-block;
+  height: 100px;
+
+  &:after {
+    border-right: 2px solid #FFF;
+    border-bottom: 2px solid #FFF;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    top: 10px;
+    right: 0;
+    left: 0;
+    -webkit-animation: 3s arrow infinite ease;
+    animation: 3s arrow infinite ease;
+  }
+
+}

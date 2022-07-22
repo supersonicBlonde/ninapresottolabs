@@ -1,0 +1,19 @@
+/**********************************************
+		POSITIONNING
+
+		**************************************/
+.fixed-sidebar {
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logos-container {
+	column-gap: 3em;
+}
+
+.section-content {
+	@media(max-width:768px) {
+		padding-bottom: 60px;
+	}
+}
