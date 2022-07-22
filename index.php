@@ -142,8 +142,14 @@ if ($form->submitted())
       <div class="section-content">
         <div class="container">
           <div class="row pt-5">
-            <div class="col-md-3 col-12 pt-2 pt-md-5"></div>
-            <div class="col-md-9 col-12 pt-2 pt-md-5">
+            <div class="col-md-4 col-12 pt-2 pt-md-5">
+              <div class="item">
+                <div class="polaroid">
+                  <img class="grayscale" src="dist/img/ninaprofil.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-12 pt-2 pt-md-5">
               <h2 class="headline uppercase">About</h2>
               <p>The knowledge of the <span class="color-white">PHP language</span>, which constitutes the basis of <span class="color-white">wordpress,</span><br>+ the experience of implementing technical responses guarantees an <span class="color-white">irreproachable service.</span></p>    
               <p>I am <span class="color-white">highly experienced</span> technically and also in the relationship I have with my clients. I am permanently available throughout the mission and after the end of it to support you in the <span class="color-white">success of your project.</span></p>

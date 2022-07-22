@@ -29,11 +29,21 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $color__accent;
+    transition: color .5s;
+
+    &:hover {
+      color: $color__hover;
+    }
   }
 
   .git {
     svg {
       fill: $color__alt_light;
+      transition: all .5s;
+    }
+
+    &:hover svg {
+      fill: $color__hover;
     }
   }
 }
