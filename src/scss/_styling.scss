@@ -198,3 +198,56 @@ a:not(.no-deco) {
   }
 
 }
+
+#upBtnContainer {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  opacity: 0;
+  transition: opacity .5s;
+  
+  &.show {
+    opacity: 1;
+    
+  }
+}
+
+#upBtn {
+  position: relative;
+  display: inline-block;
+  background-color: $color__primary; /* Set a background color */
+  color: $color__accent; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%; /* Rounded corners */
+  transition: all .5s;
+  font-size: 0;
+  width: 79px;
+  height: 79px;
+
+  &:after {
+    border-right: 4px solid $color__accent;
+    border-bottom: 4px solid $color__accent;
+    -ms-transform: rotate(-136deg) ;
+    -webkit-transform: rotate(-136deg) ;
+    transform: rotate(-136deg);
+    color: $color__accent;
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    top: 30px;
+    right: 0;
+    left: 0;
+  }
+}
+
+#upBtn:hover {
+  background-color: $color__accent; /* Add a dark-grey background on hover */
+
+  &:after {
+    border-color: $color__primary;
+  }
+}

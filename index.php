@@ -86,7 +86,7 @@ if ($form->submitted())
       <div class="section-content">
         <div class="container">
           <div class="row">
-            <div class="col-12 mt-md-5">
+            <div class="col-12 mt-md-3">
               <h1 class="mt-md-5 headline headline--is-gigantic headline--is-light no-pb uppercase">I'm a freelancer bringing your ideas to a fast functionnal website</h1>
               <h2 class="headline headline--is-small">Specialized in tailor-made premium <span class="color-accent bold">wordpress themes</span></h2>
             </div><!-- .col -->
@@ -186,6 +186,9 @@ if ($form->submitted())
         </div>
       </div>
     </section>
+    <div id="upBtnContainer">
+      <a href="#" onclick="topFunction()" class="no-deco" id="upBtn" title="Go to top">Top</a>
+    </div>
   </body>
 </html>
       
