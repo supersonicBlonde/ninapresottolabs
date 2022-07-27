@@ -271,6 +271,7 @@ a:not(.no-deco) {
 }
 
 #upBtnContainer {
+
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
@@ -279,8 +280,9 @@ a:not(.no-deco) {
   transition: opacity .5s;
   
   &.show {
-    opacity: 1;
-    
+    @media(max-width: 992px) { 
+      opacity: 1;
+    }
   }
 }
 

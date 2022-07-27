@@ -12,6 +12,11 @@
 	column-gap: 3em;
 }
 
+.panel {
+	@media(min-width: 768px) {
+		padding: 2em;
+	}
+}
 .section-content {
 	@media(max-width:768px) {
 		padding-bottom: 60px;

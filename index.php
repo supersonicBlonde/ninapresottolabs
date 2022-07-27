@@ -17,7 +17,7 @@ if ($form->submitted())
         $headers = 'From: contact@ninapresotto.com' . "\r\n" .
         'Reply-To: '.$data["email"].'' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
-        echo "<script>document.write( window.location.href = '#4')</script>";
+        echo "<script>document.write( window.location.href = '#contact')</script>";
         mail(
           'contact@ninapresotto.com',
           'A new message from ninapresotto.com',
@@ -46,6 +46,7 @@ if ($form->submitted())
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="dist/css/styles.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script src="dist/js/jquery.scrollify.js"></script>
     <script type="text/javascript" src="dist/js/scripts.min.js"></script>
   </head>
@@ -172,7 +173,7 @@ if ($form->submitted())
         </div>
       </div>
     </section>
-    <section class="panel" id="contact-section" data-section-name="home">
+    <section class="panel" id="contact-section" data-section-name="contact">
       <div class="section-content">
         <div class="container">
           <div class="row pt-3 pt-md-5">
