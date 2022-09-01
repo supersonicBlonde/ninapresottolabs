@@ -36,7 +36,7 @@ $font__monospace: Roboto Mono, monospace;
 
 $size-headline: clamp(2rem, 1.35rem + 6.2vw, 3rem);
 $size-headline-gigantic: clamp(2.9rem, 1.35rem + 6.2vw, 5rem);
-$size-smaller-headline: clamp(1.35rem, 0.9625rem + 1.55vw, 2.125rem);
+$size-smaller-headline: clamp(.8rem, 0.9625rem + 1.55vw, 1.5rem);
 $size-subtitle: clamp(1rem, 0.9625rem + 1.55vw, 1.5rem);
 
 $light: 300;
@@ -58,4 +58,5 @@ $nav__color_links_hover: #bc9435;
 $footer__color_links: #4E4E4E;
 $footer__fontsize_links: 1.2em;
 $footer__spacing_items: 1.2em; 
+
 

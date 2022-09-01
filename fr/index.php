@@ -1,11 +1,7 @@
 <!-- DESIGNED and DEVELOPED by Nina Presotto labs (https://ninapresotto.com) -->
 <?php
-$user_lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-if($user_lang == "fr") {
-  header("Location: https://ninapresotto.com/fr");
-  die();
-}
-require_once 'vendor/autoload.php';
+
+require_once '../vendor/autoload.php';
 
 $form = new Formr\Formr();
 $form->required = '*';
@@ -14,11 +10,11 @@ $form->required = '*';
 if ($form->submitted())
 {
     // get our form values and assign them to a variable
-    $data = $form->validate('Name, Email, Comments');
+    $data = $form->validate('Nom, Email, Message');
 
     // show a success message if no errors
     if($form->ok()) {
-        $form->success_message = "Thank you, {$data['name']}!";
+        $form->success_message = "Merci, {$data['name']}!";
         $headers = 'From: contact@ninapresotto.com' . "\r\n" .
         'Reply-To: '.$data["email"].'' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
@@ -36,7 +32,7 @@ if ($form->submitted())
 <html>
   <head>
     <title>Nina Presotto | Senior Wordpress Developer</title>
-    <meta content="A highly skilled and proficient WordPress developer with over 20 years of professional experience in all aspects of WordPress website creation, including custom themes, custom plug-ins, and implementation. This includes corporate, editorial or ecommerce applications." name="description">
+    <meta content="Une développeuse WordPress hautement qualifiée et compétente avec plus de 20 ans d'expérience professionnelle dans tous les aspects de la création de sites Web WordPress, y compris les thèmes personnalisés, les plug-ins personnalisés. Cela inclut les applications d'entreprise, éditoriales ou de commerce électronique." name="description">
     <meta content="width=device-width, maximum-scale=1.0" name="viewport">
     <meta content="Nina Presotto | Senior Wordpress Developer" property="og:title">
     <meta content="Nina Presotto Senior Wordress developer" property="og:site_name">
@@ -49,19 +45,19 @@ if ($form->submitted())
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="dist/css/all.min.css">
-    <link rel="stylesheet" href="dist/css/styles.min.css">
+    <link rel="stylesheet" href="../dist/css/all.min.css">
+    <link rel="stylesheet" href="../dist/css/styles.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script src="dist/js/jquery.scrollify.js"></script>
-    <script type="text/javascript" src="dist/js/scripts.min.js"></script>
+    <script src="../dist/js/jquery.scrollify.js"></script>
+    <script type="text/javascript" src="../dist/js/scripts.min.js"></script>
   </head>
   <body>
     <header class="header">
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand no-deco" href="/"><span><strong>Nina Presotto</strong></span><br><span>Senior Wordpress Developer</span></a>
+        <a class="navbar-brand no-deco" href="/fr"><span><strong>Nina Presotto</strong></span><br><span>Senior Developeur Wordpress</span></a>
         <div class="gitnav mr-2">
           <a href="https://github.com/supersonicBlonde" class="no-deco">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 261 258" >
@@ -81,8 +77,8 @@ if ($form->submitted())
             </svg>
           </a>
         </div>
-        <a class="no-deco flagnav m-2"  href="/fr">
-          <img src="dist/img/fr-flag.png" alt="French" width="18" height="12">
+        <a class="no-deco flagnav m-2"  href="/">
+          <img src="../dist/img/en-flag.png" alt="English" width="18" height="12">
         </a>
 
         <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23"
@@ -91,24 +87,24 @@ if ($form->submitted())
         </button>
         <div class="nav-slider">
           <ul class="nav navbar-nav ml-auto mr-3">
-            <li class="nav-item active">
-              <a class="nav-link no-deco" href="home">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item active">
+              <a class="nav-link no-deco" href="accueil">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link no-deco" href="work">Recent work</a>
+              <a class="nav-link no-deco" href="portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link no-deco" href="services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link no-deco" href="about">About</a>
+              <a class="nav-link no-deco" href="a-propos">A propos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link no-deco" href="contact">Say hello</a>
+              <a class="nav-link no-deco" href="contact">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="no-deco flag"  href="https://ninapresotto.com/fr">
-                <img src="dist/img/fr-flag.png" alt="French" width="18" height="12">
+              <a class="no-deco flag"  href="https://ninapresotto.com/">
+                <img src="../dist/img/en-flag.png" alt="English" width="18" height="12">
               </a>
             </li>
           </ul>
@@ -135,18 +131,19 @@ if ($form->submitted())
         <div class="nav-mask"></div>
       </nav>
     </header>
-    <section class="panel" id="home-section" data-section-name="home">
+    <section class="panel" id="home-section" data-section-name="accueil">
       <div class="section-content">
         <div class="container">
           <div class="row">
             <div class="col-12 mt-md-3">
-              <h1 class="mt-md-5 headline headline--is-gigantic headline--is-light no-pb uppercase">I'm a freelancer bringing your ideas to a fast functionnal website</h1>
-              <h2 class="headline headline--is-small">Specialized in tailor-made premium <span class="color-accent bold">wordpress themes</span></h2>
+              <h1 class="mt-md-5 headline headline--is-gigantic headline--is-light no-pb uppercase">Je transforme vos idées en un site web rapide et fonctionnel.</h1>
+              <h2 class="headline headline--is-small">Spécialisée dans la création de <span class="color-accent bold">thèmes wordpress sur mesure.</span></h2>
             </div><!-- .col -->
           </div><!-- .row -->
           <div class="row mt-5">
             <div class="col-12">
-              <p class="subtitle"><a href="#" class="scrollContact">Be in touch.</a></span> I answer to all your questions.</p>
+              <p class="subtitle">Des questions sur votre projet ?<br>
+              </span> <a href="#" class="scrollContact">Laissez une message,</a> je réponds à toutes vos questions.</p>
           </div><!-- .col -->
           </div><!-- .row -->
         </div><!-- .container -->
@@ -160,71 +157,71 @@ if ($form->submitted())
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-8 col-12">
-              <h2 class="headline uppercase">What can I do for you ?</h2>
-              <h3 class="headline headline--is-small my-3 pl-3">Services for any types of sites<br><span class="small">(corporate, ecommerce, editorial, ...):</span></h3>
+              <h2 class="headline uppercase">Ce que je peux faire pour vous</h2>
+              <h3 class="headline headline--is-small my-3 pl-3">Pour tous types de sites<br><span class="small">(vitrine, ecommerce, editorial, ...) :</span></h3>
               <ul>
-                <li>Creation of custom <strong>premium wordpress reponsive themes</strong> based on your design and specifications.</li>
-                <li>Lightweight and fast loading websites</li>
-                <li>Tailor-made back office to facilitate the edition of content</li>
-                <li>Adding additional features to existing sites</li>
-                <li>Development of custom plugins</li>
-                <li>Debugging, troubleshooting, assistance</li>
-                <li>Efficient code, elegant and optimized</li>
+                <li>Creation de <strong>themes wordpress sur mesure</strong> conforme à votre design et basées sur vos spécifications.</li>
+                <li>Sites légers, chargement rapide</li>
+                <li>Interface d'administration (Back Office) permettant une mise à jour facile de tous les contenus du site.</li>
+                <li>Ajout de fonctionnalités sur site existant.</li>
+                <li>Développement de plugins sur mesure.</li>
+                <li>Debugging, résolution de problèmes techniques, assistance</li>
+                <li>Code efficace, élégant et optimisé.</li>
               </ul>
               <div class="my-5 pl-lg-5 ">
-                <a href="#" class="scrollContact no-deco button button-services" style="color: #e3b505; background-color:#3e5c76;">Let's talk about your project!</a>
+                <a href="#" class="scrollContact no-deco button button-services" style="color: #e3b505; background-color:#3e5c76;">Parlons de votre projet !</a>
               </div>  
             </div>
-            <div class="col-md-4 col-12">
+            <div class="col-md-4 col-12 pt-md-5">
               <div class="logos-container p-md-3 justify-content-center d-flex flex-wrap">
-                <div><img src="assets/logos/HTML5_Logo.svg" alt="Official logo Html5"></div>
-                <div><img src="assets/logos/css3-seeklogo.com_v2.svg" alt="Official logo CSS3" ></div>
-                <div><img src="assets/logos/JavaScript_logo.svg" alt="Logo Javascript"></div>
-                <div><img src="assets/logos/php-logo_v2.svg" alt="Official logo php"></div>
-                <div><img src="assets/logos/logo_woocommerce_icon.svg" alt="Official logo Woocommerce" ></div>
-                <div><img src="assets/logos/WordPress-logotype-standard_v2.svg" alt="Official logo Wordpress"></div>
-                <div><img src="assets/logos/JQuery_logo_v2.svg" alt="Official logo jQuery"></div><div><img src="assets/logos/node_js_logo.svg" alt="Official logo Node"></div>
-                <div><img src="assets/logos/mysql_logo.svg" alt="Official logo mySQL"></div>
-                <div><img src="assets/logos/react_js_logo.svg" alt="Official logo React"></div>
-                <div><img src="assets/logos/gulp-seeklogo.com.svg" alt="Official logo Gulp"></div>
+                <div><img src="../assets/logos/HTML5_Logo.svg" alt="Official logo Html5"></div>
+                <div><img src="../assets/logos/css3-seeklogo.com_v2.svg" alt="Official logo CSS3" ></div>
+                <div><img src="../assets/logos/JavaScript_logo.svg" alt="Logo Javascript"></div>
+                <div><img src="../assets/logos/php-logo_v2.svg" alt="Official logo php"></div>
+                <div><img src="../assets/logos/logo_woocommerce_icon.svg" alt="Official logo Woocommerce" ></div>
+                <div><img src="../assets/logos/WordPress-logotype-standard_v2.svg" alt="Official logo Wordpress"></div>
+                <div><img src="../assets/logos/JQuery_logo_v2.svg" alt="Official logo jQuery"></div><div><img src="../assets/logos/node_js_logo.svg" alt="Official logo Node"></div>
+                <div><img src="../assets/logos/mysql_logo.svg" alt="Official logo mySQL"></div>
+                <div><img src="../assets/logos/react_js_logo.svg" alt="Official logo React"></div>
+                <div><img src="../assets/logos/gulp-seeklogo.com.svg" alt="Official logo Gulp"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="panel" id="about-section" data-section-name="about">
+    <section class="panel" id="about-section" data-section-name="a-propos">
       <div class="section-content">
         <div class="container">
-          <div class="row">
+          <div class="row ">
             <div class="col-md-4 col-12">
               <div class="item">
                 <div class="polaroid">
-                  <img class="grayscale" src="dist/img/ninaprofil.jpg" alt="Nina Presotto portrait">
+                  <img class="grayscale" src="../dist/img/ninaprofil.jpg" alt="Nina Presotto portrait">
                 </div>
               </div>
             </div>
             <div class="col-md-8 col-12">
-              <h2 class="headline uppercase">About</h2>
-              <p>A Highly skilled and proficient <strong>WordPress developer</strong> with over 20 years of professional experience in all aspects of website creation, including custom themes & custom plugins.</p>
-              <p>The knowledge of the <span>PHP language</span>, which constitutes the basis of <span>wordpress,</span><br>+ the experience of implementing technical responses guarantees an <span>irreproachable service.</span></p>  
-              <p>Mastering front end development, you can be assured the final render will match perfectly your design.</p>  
-              <p>I am also experienced in the relationship I have with my clients. I help them to find the appropriate solution for their specific needs.I am permanently available throughout the mission and after the end of it to support you in the <span>success of your project.</span></p>
-              <p>I am based in France and I work with the world.</p>
+              <h2 class="headline uppercase">A propos</h2>
+              <p><strong>Senior WordPress developpeur</strong> avec 20 ans d'expérience professionnelle en création de sites web incluant des themes et plugins wordpress sur mesure.</p>
+              <p>La connaissance du <span>langage PHP</span>, qui constitue la base de wordpress et l'expérience de mise en oeuvre de solutions techniques répondant à vos besoins vous garantit un service irréprochable.</p>  
+              <p>La maîtrise des outils du développement front-end vous assure un rendu final conforme à votre design orignal.</p>  
+              <p>Expérimentée dans la relation client, je vous aide à trouver la solution qui répond à votre propre problématique. Je suis disponible tout au long du projet et au delà pour assurer le succès et la maintenance du projet.</p>
+              <p>Basée en France.</p>
               <div class="my-5">
-                <a href="#" class="scrollContact no-deco button button-about" style="color: white; background-color:#4b7a7a;;">Want to know more?</a>
+                <a href="#" class="scrollContact no-deco button button-about" style="color: white; background-color:#4b7a7a;;">Contactez-moi</a>
               </div>  
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="panel" id="work-section" data-section-name="work">
+    <section class="panel" id="work-section" data-section-name="portfolio">
       <div class="section-content">
         <div class="container">
-          <div class="row">
+          <div class="row pt-3">
             <div class="col-12">
-              <h2 class="headline uppercase">RECENT WORK</h2>
+              <h2 class="headline uppercase">PORTFOLIO</h2>
              <!--  <h3>Tailor made Worpdress Themes</h3> -->
 
                     <div class="work-slider mt-5">
@@ -232,7 +229,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://fraaiberlin.de" class="no-deco zoom" target="_blank">
                           <div class="overlay">
-                            <img src="dist/img/work/fraaiberlin.jpg" class="card-img-top rounded" alt="Fraai Berlin">
+                            <img src="../dist/img/work/fraaiberlin.jpg" class="card-img-top rounded" alt="Fraai Berlin">
                             </div>
                           </a>
                           </div>
@@ -247,7 +244,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://getsharedcontacts.com" class="no-deco zoom" target="_blank">
                           <div class="overlay">
-                            <img src="dist/img/work/getsharedcontact.jpg" class="card-img-top rounded" alt="Get Shared Contacts">
+                            <img src="../dist/img/work/getsharedcontact.jpg" class="card-img-top rounded" alt="Get Shared Contacts">
                             </div>
                           </a>
                           </div>
@@ -262,7 +259,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://www.ibisstyles-stories.com/" class="no-deco zoom" target="_blank">
                         <div class="overlay">
-                          <img src="dist/img/work/ibis-style.jpg" class="card-img-top rounded" alt="Ibis Styles"></div>
+                          <img src="../dist/img/work/ibis-style.jpg" class="card-img-top rounded" alt="Ibis Styles"></div>
                         </a>
                           
                           </div>
@@ -277,7 +274,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://ibis-rooms.com/music-room-by-ibis/" class="no-deco zoom" target="_blank">
                         <div class="overlay">
-                          <img src="dist/img/work/ibis-music-room.jpg" class="card-img-top rounded" alt="Ibis Music Rooms"></div>
+                          <img src="../dist/img/work/ibis-music-room.jpg" class="card-img-top rounded" alt="Ibis Music Rooms"></div>
                         </a>
                           
                           </div>
@@ -292,7 +289,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://www.vracsdelestuaire.fr/" class="no-deco zoom" target="_blank">
                         <div class="overlay">
-                          <img src="dist/img/work/vracs-de-l-estuaire.jpg" class="card-img-top rounded" alt="Vracs de l'Estuaire"></div>
+                          <img src="../dist/img/work/vracs-de-l-estuaire.jpg" class="card-img-top rounded" alt="Vracs de l'Estuaire"></div>
                         </a>
                           
                           </div>
@@ -307,7 +304,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://purnatur.preprod2.me/" class="no-deco zoom" target="_blank">
                         <div class="overlay">
-                          <img src="dist/img/work/purnatur.jpg" class="card-img-top rounded" alt="Purnatur"></div>
+                          <img src="../dist/img/work/purnatur.jpg" class="card-img-top rounded" alt="Purnatur"></div>
                         </a>
                           
                           </div>
@@ -322,7 +319,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://www.ilestunefois.com/" class="no-deco zoom" target="_blank">
                         <div class="overlay">
-                          <img src="dist/img/work/ilestunefois.jpg" class="card-img-top rounded" alt="Il est une fois"></div>
+                          <img src="../dist/img/work/ilestunefois.jpg" class="card-img-top rounded" alt="Il est une fois"></div>
                         </a>
                           
                           </div>
@@ -337,7 +334,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://www.armide-avocats.com/" class="no-deco zoom" target="_blank">
                         <div class="overlay">
-                          <img src="dist/img/work/armide.jpg" class="card-img-top rounded" alt="Armide Avocats"></div>
+                          <img src="../dist/img/work/armide.jpg" class="card-img-top rounded" alt="Armide Avocats"></div>
                         </a>
                           
                           </div>
@@ -352,7 +349,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="http://www.essaouira.thinkers-doers.com/" class="no-deco zoom" target="_blank">
                         <div class="overlay">
-                          <img src="dist/img/work/essaouira.jpg" class="card-img-top rounded" alt="Thinkers & Doers"></div>
+                          <img src="../dist/img/work/essaouira.jpg" class="card-img-top rounded" alt="Thinkers & Doers"></div>
                         </a>
                           
                           </div>
@@ -367,7 +364,7 @@ if ($form->submitted())
                         <div class="card-header p-3">
                         <a href="https://athletica.media/" class="no-deco zoom" target="_blank">
                         <div class="overlay">
-                          <img src="dist/img/work/athletica.jpg" class="card-img-top rounded" alt="Athletica Magazine"></div>
+                          <img src="../dist/img/work/athletica.jpg" class="card-img-top rounded" alt="Athletica Magazine"></div>
                         </a>
                           
                           </div>
@@ -388,13 +385,13 @@ if ($form->submitted())
       <div class="section-content">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-md-6 offset-md-3">
-              <h2 class="headline uppercase">Say Hello</h2>
-              <p>Do you have something in mind you want to talk about ?</p>
+            <div class="col-md-6 col-12 offset-md-3">
+              <h2 class="headline uppercase">Contact</h2>
+              <p>Vous avez un projet en tête ? Parlons-en.</p>
               <div class="inputs">
                 <?php 
-                 $form->create_form('Name, Email, Comments|textarea');
-                 $form->messages();  
+                 $form->create_form('Nom, Email, Message|textarea');
+                 $form->messages(); 
                  ?> 
                 <!-- <form method="post" action="inc/contactform.php">
                   <div>
@@ -417,10 +414,10 @@ if ($form->submitted())
       </div>
     </section>
     <div class="tp-bullets" style="">
-      <div class="tp-bullet" title="Home" style="top: 0px; left: 0px;"></div>
+      <div class="tp-bullet" title="Accueil" style="top: 0px; left: 0px;"></div>
       <div class="tp-bullet" title="Services" style="top: 28px; left: 0px;"></div>
-      <div class="tp-bullet" title="About" style="top: 56px; left: 0px;"></div>
-      <div class="tp-bullet" title="Work" style="top: 84px; left: 0px;"></div>
+      <div class="tp-bullet" title="A propos" style="top: 56px; left: 0px;"></div>
+      <div class="tp-bullet" title="Portfolio" style="top: 84px; left: 0px;"></div>
       <div class="tp-bullet" title="Contact" style="top: 112px; left: 0px;"></div>
     </div>
     <div id="upBtnContainer">

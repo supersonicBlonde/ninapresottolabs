@@ -9,16 +9,35 @@
 }
 
 .logos-container {
-	column-gap: 3em;
+	column-gap: 1em; 
+
+	@media(min-width: 767px) {
+		column-gap: 3em;
+	}
 }
 
 .panel {
+	padding-top: 64px;
+
+	@media(min-width: 992px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 0;
+	}
+
+	transition: all 0.5s;
 	@media(min-width: 768px) {
-		padding: 2em;
+		/* padding: 2em; */
 	}
 }
+
 .section-content {
 	@media(max-width:768px) {
 		padding-bottom: 60px;
 	}
+}
+
+#contact-section .section-content {
+	flex-grow: 1;
 }

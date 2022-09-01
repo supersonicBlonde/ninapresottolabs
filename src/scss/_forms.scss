@@ -26,8 +26,16 @@
 		button[type=submit] {
 			padding-top: 1rem;
 			padding-bottom: 1rem;
-			background-color:#5e565a;
+			background-color:#3d314a;
+			box-shadow:  20px 20px 60px #342a3f,
+             -20px -20px 60px #463855;
+			border: 1 px solid #463855;
 			margin-top: 1rem;
+
+			&:hover {
+				box-shadow: inset 20px 20px 60px #342a3f,
+            inset -20px -20px 60px #463855;
+			}
 		}		
 		
 		label {
@@ -43,16 +51,14 @@
 		}
 		
 		input, textarea {
-			background: #5e565a;
+			background: #3d314a;
 			padding: 10px;
 			padding-left: 20px;
 			font-size: 14px;
 			border-radius: 10px;
 			border-bottom-left-radius: 0;
 			border-top-right-radius: 0;
-			box-shadow:
-				inset 3px 3px 6px 0 rgba(0, 0, 0, 0.25),
-				inset  -3px -3px 4px 0 rgba(255, 255, 255, 0.15);
+			box-shadow: inset 9.91px 9.91px 14px #342a3f, inset -9.91px -9.91px 14px #463855;
 		}
 
 		textarea {
@@ -60,7 +66,7 @@
 		}
 
 		input:invalid, textarea:invalid {
-			border: 2px dashed red;
+			border: 2px solid rgba(214,80,37, 0.3);
 		}
 		
 

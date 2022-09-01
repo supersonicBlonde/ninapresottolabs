@@ -3,3 +3,21 @@
 
 		**************************************/
 
+h4 {
+	a {
+		color: white!important;
+		text-decoration: none;
+		transition: all 0.5s;
+		display: block;
+
+		&:hover {
+			opacity: 0.7;
+			text-decoration: none;
+			transform: translateY(1px);
+		}
+	}
+}
+
+h5 {
+	font-size: 1.1em;
+}
