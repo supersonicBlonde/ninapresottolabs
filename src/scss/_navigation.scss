@@ -110,8 +110,14 @@
     }
     @media (min-width: 320px) and (max-width: 992px) {
       .nav-slider {
-        width: 300px;
-        transform: translateX(-300px);
+        width: 270px;
+        transform: translateX(-270px);
+      }
+    }
+
+    @media (min-width: 300px) and (max-width: 320px) {
+      .nav-slider {
+        width: 250px;
       }
     }
     
@@ -195,6 +201,10 @@
   
 
   &:hover {
+    color: $color__hover;
+  }
+
+  &.active {
     color: $color__hover;
   }
 }
